@@ -1,4 +1,4 @@
-# TaskForge
+# Task and Product Management System
 
 This project is a Django Rest Framework (DRF)-based system for managing categories, products, and tasks. It also supports JWT-based authentication, role-based access control, and asynchronous task notifications using Celery and RabbitMQ.
 
@@ -52,7 +52,7 @@ Python, Django, DRF, Celery, and RabbitMQ.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/jhanvi-12/TaskForge.git
+git clone <repository_url>
 cd <repository_folder>
 ```
 
@@ -64,12 +64,91 @@ source env/bin/activate  # For Linux/Mac
 env\Scripts\activate   # For Windows
 ```
 
-### 3. Install Dependencies
+### 3. Project Structure.
+```
+TaskForge
+├─ .gitignore
+├─ categories
+│  ├─ admin.py
+│  ├─ api
+│  │  ├─ api_view.py
+│  │  ├─ serializer.py
+│  │  └─ __init__.py
+│  ├─ apps.py
+│  ├─ models.py
+│  ├─ tests.py
+│  ├─ urls.py
+│  ├─ views.py
+│  └─ __init__.py
+├─ celery_app.py
+├─ config
+│  └─ env_config.py
+├─ core
+│  ├─ managers.py
+│  ├─ models.py
+│  └─ __init__.py
+├─ manage.py
+├─ products
+│  ├─ admin.py
+│  ├─ api
+│  │  ├─ api_view.py
+│  │  ├─ serializer.py
+│  │  └─ __init__.py
+│  ├─ apps.py
+│  ├─ models.py
+│  ├─ tests.py
+│  ├─ urls.py
+│  ├─ views.py
+│  └─ __init__.py
+├─ README.md
+├─ requirements.txt
+├─ tasks
+│  ├─ admin.py
+│  ├─ api
+│  │  ├─ api_view.py
+│  │  ├─ serializer.py
+│  │  └─ __init__.py
+│  ├─ apps.py
+│  ├─ celery_tasks.py
+│  ├─ models.py
+│  ├─ tests.py
+│  ├─ urls.py
+│  ├─ views.py
+│  └─ __init__.py
+├─ task_and_product_management
+│  ├─ asgi.py
+│  ├─ settings.py
+│  ├─ urls.py
+│  ├─ wsgi.py
+│  └─ __init__.py
+├─ users
+│  ├─ admin.py
+│  ├─ api
+│  │  ├─ api_view.py
+│  │  ├─ serializer.py
+│  │  └─ __init__.py
+│  ├─ apps.py
+│  ├─ management
+│  │  └─ commands
+│  │     └─ create_admin.py
+│  ├─ models.py
+│  ├─ permissions.py
+│  ├─ tests.py
+│  ├─ urls.py
+│  ├─ views.py
+│  └─ __init__.py
+└─ utils
+   ├─ constant.py
+   ├─ message.py
+   └─ standard_response.py
+```
+
+### 4. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Set Up PostgreSQL Database
+### 5. Set Up PostgreSQL Database
 1. Install PostgreSQL on your system.
 2. Create a database and user:
    ```sql
@@ -95,18 +174,18 @@ pip install -r requirements.txt
    }
    ```
 
-### 5. Run Migrations
+### 6. Run Migrations
 ```bash
 python manage.py migrate
 ```
 
-### 6. Create Admin Seeder Script
+### 7. Create Admin Seeder Script
 Run the following command to create a superuser:
 ```bash
 python manage.py createsuperuser
 ```
 
-### 7. Start the Development Server
+### 8. Start the Development Server
 ```bash
 python manage.py runserver
 ```
